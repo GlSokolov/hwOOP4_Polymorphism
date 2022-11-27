@@ -35,5 +35,18 @@ public class Main {
 
         sera.StartMove();
         sera.EndMove();
+        sera.maxSpeed(180);
+        sera.pitStop();
+        sera.bestLapTime(11.5);
+
+        space();
+
+        DriverB<PassengerCar> sokolovGS = new DriverB<>("Соколов Глеб", true, 3);
+        sokolovGS.getDriverInfo(sera);
+        DriverC<FreightCar> jidkovNS = new DriverC<>("Казыев Рустам", true,4);
+        jidkovNS.getDriverInfo(man);
+        DriverD<Bus> kazyevRM = new DriverD<>("Жидков Никита", true,3);
+        kazyevRM.getDriverInfo(fiat);
+
     }
 }
