@@ -43,16 +43,20 @@ public class Main {
 
         space();
 
-        DriverB sokolovGS = new DriverB("Соколов Глеб", true, 3, sera);
-        System.out.println(sokolovGS);
+        ChooseDriver<PassengerCar> driverB = new ChooseDriver<>("Глеб", true, 3);
+        driverB.getDriverInfo(sera);
+        driverB.getDriverInfo(chaser);
 
-        DriverC jidkovNS = new DriverC("Казыев Рустам", true,4, man);
-        System.out.println(jidkovNS);
+        ChooseDriver<FreightCar> driverC = new ChooseDriver<>("Никита", true, 4);
+        driverC.getDriverInfo(man);
 
-        DriverD kazyevRM = new DriverD("Жидков Никита", true,3, fiat);
-        System.out.println(kazyevRM);
+        ChooseDriver<Bus> driverD = new ChooseDriver<>("Рустам", true, 5);
+        driverD.getDriverInfo(fiat);
 
-
+        ChooseDriver<Car> driverBCD = new ChooseDriver<>("Судья", true, 6);
+        driverBCD.getDriverInfo(sera);
+        driverBCD.getDriverInfo(man);
+        driverBCD.getDriverInfo(fiat);
 
     }
 }
