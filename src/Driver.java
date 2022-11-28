@@ -1,17 +1,25 @@
-public abstract class Driver {
+public class Driver<D extends Car> {
     private String fio;
     private boolean driverLicense;
     private int standing;
+    private final D car;
 
-    public Driver(String fio, boolean driverLicense, int standing) {
+    public Driver(String fio, boolean driverLicense, int standing, D car) {
         setFio(fio);
         setDriverLicense(driverLicense);
-        setStanding(standing);;
+        setStanding(standing);
+        this.car = car;
     }
 
-    public abstract void StartMove();
-    public abstract void EndMove();
-    public abstract void refuel();
+    public void StartMove() {
+        System.out.println("Водитель " + getFio() + " заправляется");
+    }
+    public void EndMove() {
+        System.out.println("Водитель " + getFio() + " остановился");
+    }
+    public void refuel() {
+        System.out.println("Водитель " + getFio() + " поехал");
+    }
 
     public String getFio() {
         return fio;
@@ -36,5 +44,10 @@ public abstract class Driver {
             this.standing = 0;
         } else {
         this.standing = standing;}
+    }
+
+    @Override
+    public String toString() {
+        return "Водитель " +getFio()+ " управляет автомобилем " +this.car.getBrand()+ " " +this.car.getModel()+ " и будет учасвтвовать в заезде";
     }
 }

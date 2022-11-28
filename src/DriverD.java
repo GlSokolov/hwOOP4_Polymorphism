@@ -1,6 +1,6 @@
-public class DriverD <D extends Bus> extends Driver {
-    public DriverD(String fio, boolean driverLicense, int standing) {
-        super(fio, driverLicense, standing);
+public class DriverD extends Driver <Bus> {
+    public DriverD(String fio, boolean driverLicense, int standing, Bus car) {
+        super(fio, driverLicense, standing, car);
     }
 
     @Override
@@ -14,9 +14,5 @@ public class DriverD <D extends Bus> extends Driver {
     @Override
     public void refuel() {
         System.out.println("Водитель " + getFio() + " поехал");
-    }
-
-    public void getDriverInfo (D Bus) {
-        System.out.println("Водитель " +getFio()+ " управляет автомобилем " +Bus.getBrand()+ " " +Bus.getModel()+ " и будет учасвтвовать в заезде");
     }
 }

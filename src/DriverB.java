@@ -1,6 +1,6 @@
-public class DriverB <B extends PassengerCar> extends Driver {
-    public DriverB(String fio, boolean driverLicense, int standing) {
-        super(fio, driverLicense, standing);
+public class DriverB extends Driver<PassengerCar>  {
+    public DriverB(String fio, boolean driverLicense, int standing, PassengerCar car) {
+        super(fio, driverLicense, standing, car);
     }
 
     @Override
@@ -16,7 +16,4 @@ public class DriverB <B extends PassengerCar> extends Driver {
         System.out.println("Водитель " + getFio() + " поехал");
     }
 
-    public void getDriverInfo (B PassengerCar) {
-        System.out.println("Водитель " +getFio()+ " управляет автомобилем " +PassengerCar.getBrand()+ " " +PassengerCar.getModel()+ " и будет учасвтвовать в заезде");
-    }
 }

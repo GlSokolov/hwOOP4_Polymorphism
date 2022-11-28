@@ -1,3 +1,5 @@
+import java.sql.Driver;
+
 public class Main {
     public static void space() {
         System.out.println("===============================================================");
@@ -41,12 +43,16 @@ public class Main {
 
         space();
 
-        DriverB<PassengerCar> sokolovGS = new DriverB<>("Соколов Глеб", true, 3);
-        sokolovGS.getDriverInfo(sera);
-        DriverC<FreightCar> jidkovNS = new DriverC<>("Казыев Рустам", true,4);
-        jidkovNS.getDriverInfo(man);
-        DriverD<Bus> kazyevRM = new DriverD<>("Жидков Никита", true,3);
-        kazyevRM.getDriverInfo(fiat);
+        DriverB sokolovGS = new DriverB("Соколов Глеб", true, 3, sera);
+        System.out.println(sokolovGS);
+
+        DriverC jidkovNS = new DriverC("Казыев Рустам", true,4, man);
+        System.out.println(jidkovNS);
+
+        DriverD kazyevRM = new DriverD("Жидков Никита", true,3, fiat);
+        System.out.println(kazyevRM);
+
+
 
     }
 }
