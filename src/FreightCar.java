@@ -1,6 +1,8 @@
 public class FreightCar extends Car implements Competing{
-    public FreightCar(String brand, String model, double engineVolume) {
+    private BodyType bodyType;
+    public FreightCar(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        setBodyType(bodyType);
     }
 
     public void StartMove() {
@@ -8,6 +10,21 @@ public class FreightCar extends Car implements Competing{
     }
     public void EndMove() {
         System.out.println("Приехали!");
+    }
+    public enum BodyType {
+        N1("Масса до 12т"), N2("Масса от 3,5т до 12т"), N3("Масса > 12т");
+        final String translate;
+        BodyType(String translate) {
+            this.translate = translate;
+        }
+    }
+    @Override
+    public void PrintType() {
+        if (bodyType == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Тип авто - " + bodyType);
+        }
     }
 
     @Override
@@ -23,5 +40,12 @@ public class FreightCar extends Car implements Competing{
     @Override
     public void maxSpeed(int maxSpeed) {
         System.out.println("Максимальная скорость "+getBrand()+" "+getModel()+" - "+maxSpeed+"км*ч");
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 }

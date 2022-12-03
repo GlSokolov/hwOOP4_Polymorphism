@@ -12,6 +12,7 @@ public abstract class Car {
 
     public abstract void StartMove();
     public abstract void EndMove();
+    public abstract void PrintType();
 
     public double getEngineVolume() {
         return engineVolume;

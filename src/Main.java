@@ -5,20 +5,20 @@ public class Main {
         System.out.println("===============================================================");
     }
     public static void main(String[] args) {
-        PassengerCar lada = new PassengerCar("Лада", "Гранта", 1.6);
-        PassengerCar alteeza = new PassengerCar("Тайота", "Альтеза", 2.0);
-        PassengerCar chaser = new PassengerCar("Тайота", "Чайзер", 2.5);
-        PassengerCar sera = new PassengerCar("Тайота", "Сера", 1.5);
+        PassengerCar lada = new PassengerCar("Лада", "Гранта", 1.6, PassengerCar.BodyType.HATCHBACK);
+        PassengerCar alteeza = new PassengerCar("Тайота", "Альтеза", 2.0, PassengerCar.BodyType.SEDAN);
+        PassengerCar chaser = new PassengerCar("Тайота", "Чайзер", 2.5, PassengerCar.BodyType.SEDAN);
+        PassengerCar sera = new PassengerCar("Тайота", "Сера", 1.5, PassengerCar.BodyType.COUPE);
 
-        FreightCar kamaz = new FreightCar("КАМаз", "356", 4.0);
-        FreightCar volvo = new FreightCar("Вольво", "123", 4.5);
-        FreightCar mercedes = new FreightCar("Мерседес", "2346", 5.0);
-        FreightCar man = new FreightCar("МАН", "26485", 6.0);
+        FreightCar kamaz = new FreightCar("КАМаз", "356", 4.0, FreightCar.BodyType.N1);
+        FreightCar volvo = new FreightCar("Вольво", "123", 4.5, FreightCar.BodyType.N1);
+        FreightCar mercedes = new FreightCar("Мерседес", "2346", 5.0, FreightCar.BodyType.N1);
+        FreightCar man = new FreightCar("МАН", "26485", 6.0, FreightCar.BodyType.N2);
 
-        Bus ikarus = new Bus("Икарус", "55", 2.0);
-        Bus GAZel = new Bus("Газель", "Next", 1.6);
-        Bus PAZ = new Bus("Паз", "32053", 2.5);
-        Bus fiat = new Bus("Фиат", "228", 2.0);
+        Bus ikarus = new Bus("Икарус", "55", 2.0, Bus.BodyType.MEDIUM);
+        Bus GAZel = new Bus("Газель", "Next", 1.6, Bus.BodyType.SMALL);
+        Bus PAZ = new Bus("Паз", "32053", 2.5, Bus.BodyType.MEDIUM);
+        Bus fiat = new Bus("Фиат", "228", 2.0, Bus.BodyType.SMALL);
 
         System.out.println(lada);
         System.out.println(alteeza);
@@ -41,6 +41,10 @@ public class Main {
         sera.pitStop();
         sera.bestLapTime(11.5);
 
+        sera.PrintType();
+        ikarus.PrintType();
+        kamaz.PrintType();
+
         space();
 
         ChooseDriver<PassengerCar> driverB = new ChooseDriver<>("Глеб", true, 3);
@@ -57,6 +61,8 @@ public class Main {
         driverBCD.getDriverInfo(sera);
         driverBCD.getDriverInfo(man);
         driverBCD.getDriverInfo(fiat);
+
+
 
     }
 }
