@@ -1,4 +1,4 @@
-public abstract class Car {
+public abstract class Car <D extends Driver> {
     private String brand;
     private String model;
     private double engineVolume;
@@ -13,6 +13,7 @@ public abstract class Car {
     public abstract void StartMove();
     public abstract void EndMove();
     public abstract void PrintType();
+    public abstract String GetDiagnosed(D driver);
 
     public double getEngineVolume() {
         return engineVolume;
@@ -49,5 +50,6 @@ public abstract class Car {
                 ", Обьем двигателя - " + engineVolume +
                 "л.]";
     }
+
 }
 

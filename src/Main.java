@@ -47,22 +47,23 @@ public class Main {
 
         space();
 
-        ChooseDriver<PassengerCar> driverB = new ChooseDriver<>("Глеб", true, 3);
+        ChooseDriver<PassengerCar> driverB = new ChooseDriver<>("Глеб", true, 3, "B");
         driverB.getDriverInfo(sera);
         driverB.getDriverInfo(chaser);
 
-        ChooseDriver<FreightCar> driverC = new ChooseDriver<>("Никита", true, 4);
+        ChooseDriver<FreightCar> driverC = new ChooseDriver<>("Никита", true, 4, "C");
         driverC.getDriverInfo(man);
 
-        ChooseDriver<Bus> driverD = new ChooseDriver<>("Рустам", true, 5);
+        ChooseDriver<Bus> driverD = new ChooseDriver<>("Рустам", true, 5, "D");
         driverD.getDriverInfo(fiat);
 
-        ChooseDriver<Car> driverBCD = new ChooseDriver<>("Судья", true, 6);
+        ChooseDriver<Car> driverBCD = new ChooseDriver<>("Судья", true, 6, "BCD");
         driverBCD.getDriverInfo(sera);
         driverBCD.getDriverInfo(man);
         driverBCD.getDriverInfo(fiat);
 
-
-
+space();
+// Домашка на тему "Исключения":
+        fiat.GetDiagnosed(driverB);
     }
 }

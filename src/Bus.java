@@ -1,3 +1,5 @@
+import java.text.MessageFormat;
+
 public class Bus extends Car implements Competing{
     private BodyType bodyType;
     public Bus(String brand, String model, double engineVolume, BodyType bodyType) {
@@ -11,6 +13,11 @@ public class Bus extends Car implements Competing{
     public void EndMove() {
         System.out.println("Приехали!");
     }
+    @Override
+    public String GetDiagnosed(Driver driver) {
+        return "Автобус "+getBrand()+" "+getModel()+ " в диагностике не нуждается";
+    }
+
     public enum BodyType {
         EXTRASMALL("до 10 мест"), SMALL("до 25 мест"), MEDIUM("40-50 мест"), LARGE("60-80 мест"), EXTRALARGE("100-120 мест");
         final String translate;

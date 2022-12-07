@@ -1,12 +1,14 @@
-public abstract class Driver<D extends Car> {
+public abstract class Driver {
     private String fio;
     private boolean driverLicense;
     private int standing;
+    private String  category;
 
-    public Driver(String fio, boolean driverLicense, int standing) {
+    public Driver(String fio, boolean driverLicense, int standing, String category) {
         setFio(fio);
         setDriverLicense(driverLicense);
         setStanding(standing);
+        setCategory(category);
     }
 
     public abstract void StartMove();
@@ -38,5 +40,15 @@ public abstract class Driver<D extends Car> {
             this.standing = standing;}
     }
 
+    public String getCategory() {
+        return category;
+    }
+    public void setCategory(String category) {
+        if (category == null || category.isEmpty() || category.isBlank()) {
+            throw new IllegalArgumentException("Необходимо указать категорию водителя!");
+        } else {
+            this.category = category;
+        }
+    }
 }
 

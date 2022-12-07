@@ -11,6 +11,11 @@ public class FreightCar extends Car implements Competing{
     public void EndMove() {
         System.out.println("Приехали!");
     }
+    @Override
+    public String GetDiagnosed(Driver driver) {
+        return "Автомобиль "+getBrand()+ " " +getModel()+ " прошел диагностику";
+    }
+
     public enum BodyType {
         N1("Масса до 12т"), N2("Масса от 3,5т до 12т"), N3("Масса > 12т");
         final String translate;

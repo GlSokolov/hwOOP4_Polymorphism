@@ -1,6 +1,6 @@
 public class ChooseDriver <C extends Car> extends Driver {
-    public ChooseDriver(String fio, boolean driverLicense, int standing) {
-        super(fio, driverLicense, standing);
+    public ChooseDriver(String fio, boolean driverLicense, int standing, String category) {
+        super(fio, driverLicense, standing, category);
     }
 
     @Override

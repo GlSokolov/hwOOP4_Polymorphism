@@ -11,6 +11,11 @@ public class PassengerCar extends Car implements Competing{
         System.out.println("Приехали!");
     }
 
+    @Override
+    public String GetDiagnosed(Driver driver) {
+        return "Автомобиль "+getBrand()+ " " +getModel()+ " прошел диагностику";
+    }
+
     public enum BodyType {
         SEDAN("Седан"), HATCHBACK("Хечбек"), COUPE("Купе"), UNIVERSAL("Универсал"), SUV("Внедорожник"), CROSSOVER("Кроссовер"), PICKUP("Пикап"), VAN("Фургон"), MINIVAN("Минивен");
         final String translate;
@@ -18,7 +23,6 @@ public class PassengerCar extends Car implements Competing{
             this.translate = translate;
         }
     }
-
     @Override
     public void PrintType() {
         if (bodyType == null) {
@@ -27,6 +31,7 @@ public class PassengerCar extends Car implements Competing{
             System.out.println("Автомобиль - " +getBrand()+ " "+getModel()+ " | Тип авто - " + bodyType);
         }
     }
+
 
     @Override
     public void pitStop() {
